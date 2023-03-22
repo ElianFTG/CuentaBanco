@@ -10,8 +10,14 @@ export class BankAccount {
   }
 
   open() {
-    this.cuentaAbierta = true;
-    this.bolsa = 0;
+    if(!this.cuentaAbierta) {
+      this.cuentaAbierta = true;
+      this.bolsa = 0;
+    }
+    else {
+      throw new ValueError();
+    }
+    
   }
 
   close() {
@@ -30,7 +36,7 @@ export class BankAccount {
   }
 
   withdraw(dineroRetirado) {
-    if(dineroRetirado <= this.bolsa) {
+    if(dineroRetirado <= this.bolsa && dineroRetirado > 0) {
       let retiro = this.bolsa - dineroRetirado;
       this.bolsa = retiro;
     }

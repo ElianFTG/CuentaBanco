@@ -6,14 +6,15 @@
 export class BankAccount {
   constructor() {
     this.bolsa = 0;
+    this.cuentaAbierta = false;
   }
 
   open() {
-    
+    this.cuentaAbierta = true;
   }
 
   close() {
-    
+    this.cuentaAbierta = false;
   }
 
   deposit(dinerodepositado) {
@@ -27,7 +28,12 @@ export class BankAccount {
   }
 
   get balance() {
-    return this.bolsa;
+    if(this.cuentaAbierta) {
+      return this.bolsa;
+    }
+    else {
+      throw new ValueError();
+    }
   }
 }
 

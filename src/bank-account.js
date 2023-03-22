@@ -30,8 +30,14 @@ export class BankAccount {
   }
 
   withdraw(dineroRetirado) {
-    let retiro = this.balance - dineroRetirado;
-    this.bolsa = retiro;
+    if(dineroRetirado <= this.bolsa) {
+      let retiro = this.bolsa - dineroRetirado;
+      this.bolsa = retiro;
+    }
+    else {
+      throw new ValueError();
+    }
+    
   }
 
   get balance() {

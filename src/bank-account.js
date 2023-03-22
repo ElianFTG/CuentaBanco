@@ -31,8 +31,14 @@ export class BankAccount {
   }
 
   deposit(dinerodepositado) {
-    let aumento = this.balance + dinerodepositado;
-    this.bolsa = aumento;
+    if(dinerodepositado > 0) {
+      let aumento = this.balance + dinerodepositado;
+      this.bolsa = aumento;
+    }
+    else {
+      throw new ValueError();
+    }
+    
   }
 
   withdraw(dineroRetirado) {

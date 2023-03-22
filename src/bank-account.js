@@ -21,8 +21,9 @@ export class BankAccount {
     this.bolsa = aumento;
   }
 
-  withdraw() {
-    throw new Error("Remove this statement and implement this function");
+  withdraw(dineroRetirado) {
+    let retiro = this.balance - dineroRetirado;
+    this.bolsa = retiro;
   }
 
   get balance() {

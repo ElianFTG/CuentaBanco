@@ -14,7 +14,13 @@ export class BankAccount {
   }
 
   close() {
-    this.cuentaAbierta = false;
+    if(this.cuentaAbierta) {
+      this.cuentaAbierta = false;
+    }
+    else {
+      throw new ValueError();
+    }
+    
   }
 
   deposit(dinerodepositado) {

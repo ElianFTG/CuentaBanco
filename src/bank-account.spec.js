@@ -46,7 +46,7 @@ describe("Bank Account", () => {
     expect(() => account.balance).toThrow(ValueError);
   });
 
-  xit("deposit into closed account throws error", () => {
+  it("deposit into closed account throws error", () => {
     const account = new BankAccount();
     account.open();
     account.close();
@@ -55,7 +55,7 @@ describe("Bank Account", () => {
     }).toThrow(ValueError);
   });
 
-  xit("withdraw from closed account throws error", () => {
+  it("withdraw from closed account throws error", () => {
     const account = new BankAccount();
     account.open();
     account.close();
@@ -64,7 +64,7 @@ describe("Bank Account", () => {
     }).toThrow(ValueError);
   });
 
-  xit("close already closed account throws error", () => {
+  it("close already closed account throws error", () => {
     const account = new BankAccount();
     expect(() => {
       account.close();

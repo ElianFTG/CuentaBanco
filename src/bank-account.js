@@ -11,6 +11,7 @@ export class BankAccount {
 
   open() {
     this.cuentaAbierta = true;
+    this.bolsa = 0;
   }
 
   close() {
